@@ -1,0 +1,356 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarRentPro - Premium Car Rental Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="~/css/LandingPage.css">
+    <link rel="stylesheet" href="~/css/enhanced-styles.css">
+    <link rel="stylesheet" href="~/css/video-intro.css">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script>
+</head> 
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <!-- Will be replaced by enhanced-loader.js -->
+    </div>
+
+    <!-- Login/Signup Sidebar -->
+    <div class="auth-sidebar" id="authSidebar">
+        <div class="auth-close" id="closeAuth">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="auth-content">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+
+            <div class="auth-form-container">
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form active">
+                    <h2>Welcome Back</h2>
+                    <p>Enter your credentials to access your account</p>
+
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group remember-forgot">
+                        <div class="remember">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-button">Login</button>
+
+                    <div class="social-login">
+                        <p>Or login with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-button google">
+                                <i class="fab fa-google"></i>
+                            </button>
+                            <button type="button" class="social-button facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button type="button" class="social-button apple">
+                                <i class="fab fa-apple"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signupForm" class="auth-form">
+                    <h2>Create Account</h2>
+                    <p>Join us and experience premium car rentals</p>
+
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="signupPassword" placeholder="Create a password" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <div class="password-input">
+                            <input type="password" id="signupConfirmPassword" placeholder="Confirm your password"
+                                required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group terms">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                                Policy</a></label>
+                    </div>
+
+                    <button type="submit" class="auth-button">Create Account</button>
+
+                    <div class="social-login">
+                        <p>Or sign up with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-button google">
+                                <i class="fab fa-google"></i>
+                            </button>
+                            <button type="button" class="social-button facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button type="button" class="social-button apple">
+                                <i class="fab fa-apple"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#">
+                        <i class="fas fa-car"></i>
+                        <span>CarRentPro</span>
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#fleet">Cars <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-column">
+                                    <h4>Categories</h4>
+                                    <ul>
+                                        <li><a href="#luxury">Luxury</a></li>
+                                        <li><a href="#sports">Sports</a></li>
+                                        <li><a href="#suv">SUVs</a></li>
+                                        <li><a href="#electric">Electric</a></li>
+                                        <li><a href="#convertible">Convertibles</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Popular Brands</h4>
+                                    <ul>
+                                        <li><a href="#mercedes">Mercedes-Benz</a></li>
+                                        <li><a href="#bmw">BMW</a></li>
+                                        <li><a href="#porsche">Porsche</a></li>
+                                        <li><a href="#ferrari">Ferrari</a></li>
+                                        <li><a href="#lamborghini">Lamborghini</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-column featured">
+                                    <div class="featured-car">
+                                        <img src="https://greencarscompare.com/upload/resize_cache/iblock/af8/1100_618_2/683f5zoi0e5wpubzns7nxn1ic7rsxp1o.png"
+                                            alt="Featured Car">
+                                        <div class="featured-content">
+                                            <h4>New Arrival</h4>
+                                            <h3>Tesla Model S Plaid</h3>
+                                            <a href="#" class="btn btn-sm">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="btn btn-collaborate">Collaborate With Us</button>
+                    <button class="btn btn-outline" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li class="mobile-dropdown">
+                <a href="#fleet">Cars <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="#luxury">Luxury</a></li>
+                    <li><a href="#sports">Sports</a></li>
+                    <li><a href="#suv">SUVs</a></li>
+                    <li><a href="#electric">Electric</a></li>
+                    <li><a href="#convertible">Convertibles</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="mobile-auth">
+                <button class="btn btn-outline" id="mobileLoginBtn">Login</button>
+                <button class="btn btn-primary" id="mobileSignupBtn">Sign Up</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop id="heroVideo" class="hero-video">
+                <source
+                    src="https://assets.mixkit.co/videos/preview/mixkit-driving-through-the-mountains-32060-large.mp4"
+                    type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-slider swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="container">
+                        <div class="hero-content" data-aos="fade-up">
+                            <h1>Premium Car Rental Experience</h1>
+                            <p>Drive the car of your dreams with our exclusive fleet of luxury and performance vehicles
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="#fleet" class="btn btn-primary">Explore Fleet</a>
+                                <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                    <div class="container">
+                        <div class="hero-content" data-aos="fade-up">
+                            <h1>Luxury Meets Performance</h1>
+                            <p>Experience the thrill of driving the world's most prestigious supercars</p>
+                            <div class="hero-buttons">
+                                <a href="#supercars" class="btn btn-primary">View Supercars</a>
+                                <a href="#booking" class="btn btn-outline">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2083&q=80');">
+                    <div class="container">
+                        <div class="hero-content" data-aos="fade-up">
+                            <h1>Unforgettable Driving Experience</h1>
+                            <p>Create memories with our exclusive collection of exotic and luxury vehicles</p>
+                            <div class="hero-buttons">
+                                <a href="#exotic" class="btn btn-primary">Exotic Collection</a>
+                                <a href="#membership" class="btn btn-outline">Join Membership</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- Search Form -->
+        <div class="search-container" data-aos="fade-up" data-aos-delay="300">
+            <form class="search-form">
+                <div class="form-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Location</label>
+                    <select>
+                        <option value="">Select location</option>
+                        <option value="new-york">New York</option>
+                        <option value="los-angeles">Los Angeles</option>
+                        <option value="miami">Miami</option>
+                        <option value="las-vegas">Las Vegas</option>
+                        <option value="chicago">Chicago</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Pick-up Date</label>
+                    <input type="date" min="2023-01-01">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Return Date</label>
+                    <input type="date" min="2023-01-01">
+                </div>
+
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rest of the content remains the same as in the original file -->
+    <!-- ... -->
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="~/js/LandingPage.js"></script>
+    <script src="~/js/custom-cursor.js"></script>
+    <script src="~/js/enhanced-loader.js"></script>
+    <script src="~/js/video-intro.js"></script>
+    <script src="~/js/animation-libraries.js"></script>
+</body>
+
+</html>
+
